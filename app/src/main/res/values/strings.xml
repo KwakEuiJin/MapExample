@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">part4-chapter3</string>
+    <string name="please_input_research">검색어를 입력해주세요</string>
+    <string name="search">검색</string>
+    <string name="non_research">검색결과가 존재하지 않습니다.</string>
+</resources>

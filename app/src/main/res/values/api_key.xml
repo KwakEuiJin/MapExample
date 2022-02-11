@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="google_map">Your API KEy </string>
-
+    <string name="google_map">your api key</string>
 </resources>

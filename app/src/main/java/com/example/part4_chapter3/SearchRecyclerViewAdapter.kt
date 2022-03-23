@@ -13,7 +13,7 @@ class SearchRecyclerViewAdapter(val searchResultClickListener: (SearchResultEnti
     ListAdapter<SearchResultEntity, SearchRecyclerViewAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(
-        val binding: ItemSearchResultBinding,
+        val binding: ItemSearchResultBinding
         ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item:SearchResultEntity) = with(binding) {

@@ -89,8 +89,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope {
         )
         val markerOptions = MarkerOptions().apply {
             position(positionLatLng)
-            title(searchResultEntity.name)
-            snippet(searchResultEntity.fullAdress)
+            title(searchResultEntity.fullAdress)
+            snippet(searchResultEntity.name)
         }
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(positionLatLng, 17f))
         return map.addMarker(markerOptions)!!

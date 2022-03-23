@@ -82,14 +82,13 @@ class MainActivity() : AppCompatActivity(), CoroutineScope {
     private fun setData(pois: Pois) {
         val dataList = pois.poi.map {
             SearchResultEntity(
-                fullAdress = it.upperAddrName.toString(),
-                name = it.name ?:"빌딩명 없음",
+                fullAdress =  it.name ?:"빌딩명 없음",
+                name =it.upperAddrName+" "+it.middleAddrName+" "+it.lowerAddrName+" "+it.firstNo ?:"주소 없음",
                 locationLatLng = LocationLatLngEntity(
                     it.noorLat, it.noorLon
                 )
             )
         }
-        Log.d("리스트", dataList.toString())
         searchRecyclerViewAdapter.submitList(dataList)
         searchRecyclerViewAdapter.notifyDataSetChanged()
 
@@ -98,7 +97,7 @@ class MainActivity() : AppCompatActivity(), CoroutineScope {
     private fun searchKeyword(keyword:String) {
         launch(coroutineContext) {
             try {
-                with(Dispatchers.IO){
+                withContext(Dispatchers.IO){
                     val response = RetrofitUtil.apiService.getSearchLocation(
                         keyword = keyword
                     )
